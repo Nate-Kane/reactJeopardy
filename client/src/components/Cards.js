@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Card, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 // const Cards = () => {
 
@@ -31,6 +32,7 @@ export default class Cards extends React.Component {
       this.setState({ cards });
     })
   }
+  
 
   render() {
     return (
@@ -48,7 +50,9 @@ export default class Cards extends React.Component {
                   </ul></Card.Description>
               </Card.Content>
               <Card.Content>
-                <Button color='green' size='mini'>Show Answer</Button>
+                <Link to='/answer'>
+                  <Button color='green' size='mini'>Show Answer</Button>
+                </Link>
               </Card.Content>
             </Card>
           </Card.Group>
