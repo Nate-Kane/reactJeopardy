@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   namespace :api do
-    resources :things
+    resources :cards
   end
 
   # namespace :api do         # maybe later you create more stuff and you have different versions of your api, like
