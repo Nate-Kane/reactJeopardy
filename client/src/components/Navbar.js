@@ -1,7 +1,8 @@
 
 // FOR NOW I'LL JUST DO EXPORT DEFAULT AND A RANDOM NOTE OR SOMETHING TO SHOW THAT THIS PAGE IS CONNECT
 
-export default () => <h2> Navbar </h2>
+import { Link } from "react-router-dom";
+
 
 
                     // HERE IS AN EXAMPLE OF A NAVBAR WITH SEMANTIC-UI
@@ -20,3 +21,13 @@ export default () => <h2> Navbar </h2>
 //     </Menu>
 //   );
 // };
+
+
+const Navbar = () => (
+  <>
+    <Link to='/'>Home _ </Link>
+    <Link to='/cards'> Cards</Link>
+  </>
+)
+
+export default Navbar;
