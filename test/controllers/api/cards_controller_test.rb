@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class CardsControllerTest < ActionDispatch::IntegrationTest
+class Api::CardsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get cards_index_url
+    get api_cards_index_url
     assert_response :success
   end
 
   test "should get show" do
-    get cards_show_url
+    get api_cards_show_url
     assert_response :success
   end
 
