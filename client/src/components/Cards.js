@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+import { Card, Button } from 'semantic-ui-react';
 
 // const Cards = () => {
 
@@ -15,6 +16,14 @@ export default class Cards extends React.Component {
     cards: []
   }
 
+  ansArr = [
+    "randomAnswer1",
+    "randomAnswer2",
+    "randomAnswer3",
+    "randomAnswer4",
+    "randomAnswer5",
+  ]
+
   componentDidMount() {
     Axios.get('/api/cards')
     .then(res => {
@@ -25,9 +34,26 @@ export default class Cards extends React.Component {
 
   render() {
     return (
-      <ul>
-        { this.state.cards.map(card => <li>{card.category} {card.question}</li>)}
-      </ul>
+      <div>
+        { this.state.cards.map(card =>
+        <Card.Group itemsPerRow={3}>
+            <Card raised>
+              <Card.Content>
+                <Card.Meta as='h1'>{card.category}</Card.Meta>
+                <Card.Header>{card.question}</Card.Header>
+                  <Card.Description><ul>
+                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
+                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
+                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
+                  </ul></Card.Description>
+              </Card.Content>
+              <Card.Content>
+                <Button color='green' size='mini'>Show Answer</Button>
+              </Card.Content>
+            </Card>
+          </Card.Group>
+        )}
+      </div>
     )
   }
 }

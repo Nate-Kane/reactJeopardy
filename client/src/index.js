@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-// import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css';
 
 
        //////////////         Now, I did yarn add axios react-router-dom    to add those two packages, but I didn't add semantic
