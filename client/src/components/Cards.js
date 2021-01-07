@@ -17,13 +17,13 @@ export default class Cards extends React.Component {
     cards: []
   }
 
-  ansArr = [
-    "randomAnswer1",
-    "randomAnswer2",
-    "randomAnswer3",
-    "randomAnswer4",
-    "randomAnswer5",
-  ]
+  // ansArr = [
+  //   "randomAnswer1",
+  //   "randomAnswer2",
+  //   "randomAnswer3",
+  //   "randomAnswer4",
+  //   "randomAnswer5",
+  // ]
 
   componentDidMount() {
     Axios.get('/api/cards')
@@ -39,19 +39,26 @@ export default class Cards extends React.Component {
       <div>
         { this.state.cards.map(card =>
         <Card.Group itemsPerRow={3}>
-            <Card raised>
+            <Card>
               <Card.Content>
                 <Card.Meta as='h1'>{card.category}</Card.Meta>
-                <Card.Header>{card.question}</Card.Header>
+                <Card.Header Align='center'>{card.question}</Card.Header>
+                  {/* <Card.Description><ul>
+                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
+                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
+                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
+                  </ul></Card.Description> */}
                   <Card.Description><ul>
-                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
-                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
-                    <li>{this.ansArr[(Math.floor(Math.random()*this.ansArr.length))]}</li>
+                    <li>{card.a1}</li>
+                    <li>{card.answer}</li>
+                    <li>{card.a2}</li>
                   </ul></Card.Description>
               </Card.Content>
               <Card.Content>
+                                    {/* for this onClick, maybe link it to the Show method? Is that possible? */}
                 <Link to='/answer'>
-                  <Button color='green' size='mini'>Show Answer</Button>
+                  <Button color='green' size='small'>Show Answer</Button>
+                  <p>{card.answer}</p>
                 </Link>
               </Card.Content>
             </Card>

@@ -12,24 +12,65 @@
 # Thing.create(name: 'Pizza')
 # Thing.create(name: Faker::Hacker.noun)
 
-card1 = Card.create(
-  category:'category1',
-  question:'question1',
-  answer:'answer1',
-  points:101
-)
+# create_table "cards", force: :cascade do |t|
+#   t.string "category"
+#   t.string "question"
+#   t.string "answer"
+#   t.string "a1"
+#   t.string "a2"
+#   t.integer "points"
+#   t.datetime "created_at", precision: 6, null: false
+#   t.datetime "updated_at", precision: 6, null: false
+# end
 
+card1 = Card.create(
+  category:'Food',
+  question:'What is my favorite food?',
+  answer:'Italian food',
+  a1: 'French food',
+  a2: 'American food',
+  points:200
+)
 card2 = Card.create(
-  category:'category2',
-  question:'questio2',
-  answer:'answer2',
-  points:102
+  category:'Food',
+  question:'What is the most popular breakfast food?',
+  answer:'Bacon',
+  a1: 'Pancakes',
+  a2: 'Eggs',
+  points:300
 )
 
 card3 = Card.create(
-  category:'category3',
-  question:'question3',
-  answer:'answer3',
-  points:103
+  category:'Sports',
+  question:'Who is the best UFC fighter?',
+  answer:'Conor McGregor',
+  a1: 'That Russian guy',
+  a2: 'Muhammed Ali',
+  points:100
+)
+card4 = Card.create(
+  category:'Sports',
+  question:'Which of these people does MASSIVE front flips?',
+  answer:'Dominic Di Tommaso',
+  a1: 'Jason Paul',
+  a2: 'Jesse LaFlair',
+  points:400
+)
+
+card5 = Card.create(
+  category:'Music',
+  question:'What is my main instrument?',
+  answer:'Guitar',
+  a1: 'Piano',
+  a2: 'Kazoo',
+  points:400
+)
+card6 = Card.create(
+  category:'Music',
+  question:'Which of these guitar players wrote Voodoo Child?',
+  answer:'Jimi Hendrix',
+  a1: 'Eric Clapton',
+  a2: 'Oasis',
+  points:100
 )
 

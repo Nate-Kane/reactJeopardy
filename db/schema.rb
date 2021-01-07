@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_01_06_061509) do
     t.string "category"
     t.string "question"
     t.string "answer"
+    t.string "a1"
+    t.string "a2"
     t.integer "points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
